@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Bárbara Godoy | AI Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
 
@@ -18,202 +22,227 @@ box-sizing:border-box;
 
 body{
 font-family:Inter;
-background:#0f172a;
+background:#020617;
 color:white;
-line-height:1.6;
+overflow-x:hidden;
 }
 
-/* HEADER */
+/* particles */
 
-header{
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* navbar */
+
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:10;
+}
+
+nav h2{
+font-family:Orbitron;
+color:#00eaff;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
+}
+
+/* hero */
+
+.hero{
 height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#00eaff,#2563eb,#0f172a);
+padding:0 20px;
 }
 
-header h1{
+.hero h1{
+font-size:3.2rem;
 font-family:Orbitron;
-font-size:3rem;
-margin-bottom:10px;
+background:linear-gradient(90deg,#00eaff,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-header p{
-font-size:1.2rem;
-opacity:0.9;
+.hero p{
+margin-top:15px;
+max-width:700px;
+opacity:0.8;
 }
 
-.cta{
-margin-top:25px;
-padding:12px 30px;
-background:#00eaff;
+.hero button{
+margin-top:30px;
+padding:12px 28px;
+border:none;
 border-radius:30px;
+background:#00eaff;
 color:black;
-font-weight:bold;
-text-decoration:none;
-transition:0.3s;
+font-weight:600;
+cursor:pointer;
 }
 
-.cta:hover{
-transform:scale(1.05);
-background:white;
-}
-
-/* SECTION */
+/* sections */
 
 section{
-padding:80px 10%;
+padding:90px 10%;
 }
 
 h2{
+text-align:center;
 font-family:Orbitron;
-font-size:2rem;
-margin-bottom:40px;
-text-align:center;
+margin-bottom:50px;
 }
 
-/* ABOUT */
+/* cards */
 
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.about img{
-width:100%;
-border-radius:15px;
-}
-
-/* TECH GRID */
-
-.tech-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-}
-
-.tech{
-background:#1e293b;
-padding:20px;
-border-radius:12px;
-text-align:center;
-transition:0.3s;
-}
-
-.tech:hover{
-transform:translateY(-5px);
-background:#00eaff;
-color:black;
-}
-
-/* PROJECTS */
-
-.projects{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
 .card{
-background:#1e293b;
+background:rgba(255,255,255,0.05);
 border-radius:15px;
 padding:25px;
-transition:0.3s;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+background:rgba(0,234,255,0.08);
 }
 
-.card h3{
-margin-bottom:10px;
+/* tech */
+
+.tech-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:20px;
+text-align:center;
 }
 
-/* FOOTER */
+.tech{
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+font-weight:500;
+transition:0.3s;
+}
+
+.tech:hover{
+background:#00eaff;
+color:black;
+}
+
+/* footer */
 
 footer{
-text-align:center;
 padding:40px;
-background:#020617;
+text-align:center;
+background:#010409;
+margin-top:80px;
 }
 
 footer a{
+margin:0 10px;
 color:#00eaff;
 text-decoration:none;
-margin:0 10px;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:900px){
-
-.about{
-grid-template-columns:1fr;
-text-align:center;
-}
-
 }
 
 </style>
+
 </head>
 
 <body>
 
-<header>
+<div id="particles-js"></div>
+
+<nav>
+
+<h2>BG.AI</h2>
+
+<div>
+<a href="#about">Sobre</a>
+<a href="#projects">Projetos</a>
+<a href="#tech">Tecnologias</a>
+<a href="#contact">Contato</a>
+</div>
+
+</nav>
+
+
+<section class="hero">
 
 <h1>Bárbara Godoy</h1>
 
-<p>AI Engineer • Software Developer • AI Solutions Architect</p>
+<p>
+AI Engineer • Software Developer • AI Solutions Architect  
+Desenvolvendo plataformas inteligentes com IA, automação e cloud.
+</p>
 
-<a class="cta" href="#projects">Ver Projetos</a>
+<button onclick="window.location='#projects'">
+Ver Projetos
+</button>
 
-</header>
+</section>
+
 
 <section id="about">
 
-<h2>Sobre Mim</h2>
+<h2>Sobre</h2>
 
-<div class="about">
+<div class="grid">
 
-<div>
-
-<p>
-Sou engenheira de inteligência artificial e desenvolvedora de software focada em criar
-plataformas inteligentes que combinam IA, automação e escalabilidade.
-</p>
-
-<br>
+<div class="card">
 
 <p>
-Atuo no desenvolvimento de soluções SaaS, agentes inteligentes, arquiteturas cloud e
-sistemas baseados em LLMs, aplicando tecnologias modernas para resolver problemas
-reais de empresas e governos.
+
+Engenheira de Inteligência Artificial e desenvolvedora de software focada em
+construir sistemas inteligentes, agentes autônomos e plataformas SaaS.
+
 </p>
-
-<br>
-
-<p>
-Meu foco atual inclui:
-</p>
-
-<ul>
-<li>Arquitetura de sistemas com IA</li>
-<li>Desenvolvimento de agentes inteligentes</li>
-<li>Automação com n8n</li>
-<li>LLMs e integração com APIs</li>
-<li>Cloud Computing</li>
-</ul>
 
 </div>
 
-<div>
-<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="AI">
+<div class="card">
+
+<p>
+
+Experiência em desenvolvimento de soluções baseadas em LLMs, automação de
+processos, cloud computing e arquiteturas escaláveis.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<p>
+
+Trabalho com tecnologias modernas como Google Cloud, Gemini AI,
+OpenAI APIs, Supabase, Docker e frameworks de automação.
+
+</p>
+
 </div>
 
 </div>
@@ -221,23 +250,121 @@ Meu foco atual inclui:
 </section>
 
 
-<section>
+
+<section id="projects">
+
+<h2>Projetos de Inteligência Artificial</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Sappens AI</h3>
+
+<p>
+
+Plataforma educacional baseada em IA para análise de evasão escolar
+e recomposição de aprendizagem.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>EVA AI Assistant</h3>
+
+<p>
+
+Assistente virtual para análise estratégica de dados e suporte
+a gestores públicos utilizando LLMs.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Cora AI Agent</h3>
+
+<p>
+
+Agente inteligente para ouvidoria com automação de atendimento
+e análise de demandas cidadãs.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Luke AI Platform</h3>
+
+<p>
+
+Sistema de gestão inteligente com automação de processos
+e integração com assistentes de IA.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>MCP AI Server</h3>
+
+<p>
+
+Servidor de integração entre IDEs e agentes de IA para
+aumentar produtividade no desenvolvimento de software.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Framework Dev AI</h3>
+
+<p>
+
+Plataforma de desenvolvimento colaborativo com assistentes
+inteligentes e integração com repositórios.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="tech">
 
 <h2>Tecnologias</h2>
 
 <div class="tech-grid">
 
 <div class="tech">Python</div>
+<div class="tech">Dart / Flutter</div>
+<div class="tech">JavaScript</div>
+<div class="tech">C#</div>
+
 <div class="tech">Machine Learning</div>
 <div class="tech">LLMs</div>
-<div class="tech">Gemini</div>
+<div class="tech">Gemini AI</div>
 <div class="tech">OpenAI</div>
+
+<div class="tech">Google Cloud</div>
 <div class="tech">Docker</div>
 <div class="tech">Supabase</div>
-<div class="tech">Flutter</div>
+<div class="tech">Firebase</div>
+
 <div class="tech">Streamlit</div>
 <div class="tech">n8n</div>
-<div class="tech">Cloud</div>
+<div class="tech">APIs</div>
 <div class="tech">DevOps</div>
 
 </div>
@@ -245,85 +372,73 @@ Meu foco atual inclui:
 </section>
 
 
-<section id="projects">
 
-<h2>Projetos</h2>
+<section id="contact">
 
-<div class="projects">
+<h2>Contato</h2>
 
-<div class="card">
-
-<h3>Sappens AI</h3>
-
-<p>
-Plataforma educacional inteligente focada em recomposição de aprendizagem
-e análise de evasão escolar utilizando inteligência artificial.
-</p>
-
-</div>
+<div class="grid">
 
 <div class="card">
 
-<h3>Luke AI</h3>
+<p>
+
+Interessado em colaboração, projetos de IA ou desenvolvimento
+de plataformas inteligentes.
+
+</p>
 
 <p>
-Sistema inteligente de gestão com automação de processos e integração
-com assistentes baseados em IA.
+
+Entre em contato:
+
 </p>
 
-</div>
-
-<div class="card">
-
-<h3>EVA AI</h3>
+<br>
 
 <p>
-Assistente virtual baseada em LLM para análise de dados estratégicos
-e suporte a tomada de decisão.
+GitHub: github.com
 </p>
-
-</div>
-
-<div class="card">
-
-<h3>MCP Server</h3>
 
 <p>
-Servidor de integração entre IDEs e agentes de IA para aumentar
-a produtividade de desenvolvedores.
+LinkedIn: linkedin.com
 </p>
 
 </div>
 
 </div>
-
-</section>
-
-
-<section>
-
-<h2>Missão</h2>
-
-<p style="text-align:center; max-width:800px; margin:auto">
-
-Construir sistemas inteligentes que ampliem a capacidade humana,
-automatizem processos complexos e democratizem o acesso à inteligência artificial.
-
-</p>
 
 </section>
 
 
 <footer>
 
-<p>© 2026 - Bárbara Godoy</p>
+<p>© 2026 Bárbara Godoy</p>
 
-<br>
-
-<a href="https://github.com/">GitHub</a>
-<a href="https://linkedin.com/">LinkedIn</a>
+<p>AI Engineer • Software Developer</p>
 
 </footer>
+
+
+<script>
+
+particlesJS("particles-js",{
+
+particles:{
+number:{value:60},
+size:{value:3},
+color:{value:"#00eaff"},
+line_linked:{
+enable:true,
+distance:150,
+color:"#00eaff",
+opacity:0.3
+}
+}
+
+})
+
+</script>
 
 </body>
 
